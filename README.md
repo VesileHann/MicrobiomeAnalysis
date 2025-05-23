@@ -1,70 +1,61 @@
-# MicrobiomeAnalysis
-Description
+# Analysis of Gut Microbiome Diversity by Age Group
 
-This project analyzes how gut microbiome diversity changes across different age groups using data from the curatedMetagenomicData package available on Bioconductor. Only stool (fecal) samples were included in the analysis.
+## Description
 
-Objectives
+This project analyzes how gut microbiome diversity changes across different age groups using data from the `curatedMetagenomicData` package available on Bioconductor. Only stool (fecal) samples were included in the analysis.
 
-To analyze how gut microbiome diversity varies with age
+## Objectives
 
-To compare age groups using alpha diversity metrics (Richness and Shannon Index)
+* To analyze how gut microbiome diversity varies with age
+* To compare age groups using alpha diversity metrics (Richness and Shannon Index)
+* To visualize sample distribution by age group using PCA
+* To illustrate the distribution of the top 20 most abundant microbial species by age group with a heatmap
 
-To visualize sample distribution by age group using PCA
+## Technologies Used
 
-To illustrate the distribution of the top 20 most abundant microbial species by age group with a heatmap
+* **Programming Language:** R
+* **Development Environment:** RStudio (2025.05.0+496)
+* **R Version:** 4.5.0 (2025-04-11)
+* **Libraries:**
 
-Technologies Used
+  * `curatedMetagenomicData` - Microbiome dataset
+  * `dplyr` - Data manipulation
+  * `ggplot2` - Plotting
+  * `vegan` - Alpha diversity calculation
+  * `pheatmap` - Heatmap generation
 
-Programming Language: R
+## Outputs
 
-Development Environment: RStudio (2025.05.0+496)
+* Bar plot of species count (Richness) by age group
+* Box plots of alpha diversity (Richness and Shannon Index)
+* PCA scatter plot by age group
+* Heatmap of the top 20 most abundant species
+* ANOVA test results for statistical significance
 
-R Version: 4.5.0 (2025-04-11)
+## Execution Instructions
 
-Libraries:
+1. Make sure R or RStudio is installed.
+2. Install required R packages:
 
-curatedMetagenomicData - Microbiome dataset
-
-dplyr - Data manipulation
-
-ggplot2 - Plotting
-
-vegan - Alpha diversity calculation
-
-pheatmap - Heatmap generation
-
-Outputs
-
-Bar plot of species count (Richness) by age group
-
-Box plots of alpha diversity (Richness and Shannon Index)
-
-PCA scatter plot by age group
-
-Heatmap of the top 20 most abundant species
-
-ANOVA test results for statistical significance
-
-Execution Instructions
-
-Make sure R or RStudio is installed.
-
-Install required R packages:
-
+```r
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
   install.packages("BiocManager")
 }
 BiocManager::install("curatedMetagenomicData")
 install.packages(c("dplyr", "ggplot2", "vegan", "pheatmap"))
+```
 
-Run the code in analysis.R to perform the analysis.
+3. Run the code in `analysis.R` to perform the analysis.
 
-Notes
+## Notes
 
-Only stool samples with available age information were used.
+* Only stool samples with available age information were used.
+* Bray-Curtis analysis was not included in this version.
 
-Bray-Curtis analysis was not included in this version.
-
-License
+## License
 
 This project was developed for educational purposes and is released as open source.
+
+---
+
+
